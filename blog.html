@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Stackly</title>
+  <meta name="description"
+    content="Guides and playbooks on automation and AI agents from the Stackly team and our customers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./pages.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="./pages.js" defer></script>
+</head>
+
+<body data-page="blog">
+  <a class="skip" href="./404.html">Skip to content</a>
+  <div id="pg"></div>
+  <header>
+    <a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+    <button id="mb" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i
+        class="fa-solid fa-bars"></i></button>
+    <nav id="nav"><a data-p="home" href="./index.html">Home</a><a data-p="about" href="./about.html">About</a><a
+        data-p="service" href="./service.html">Service</a><a data-p="blog" href="./blog.html">Blog</a><a
+        data-p="contact" href="./contact.html">Contact</a><a class="btn" data-p="login" href="./login.html">Login</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO: full-bleed photo with slow zoom and a featured article -->
+    <section class="hero bh">
+      <img src="./images/blog/blog-hero.jpg"
+        alt="A notebook and laptop on a desk, ready for writing" width="1600" height="900" fetchpriority="high">
+      <div class="wrap">
+        <div class="tx">
+          <h1>Playbooks for teams who would rather not do it twice</h1>
+          <p class="lead">Guides, templates and customer stories on automation and AI agents.</p>
+          <div class="btns"><a class="btn" href="#browse">Browse articles</a><a class="btn o" href="#subscribe">Get the
+              newsletter</a></div>
+        </div>
+        <article class="feat">
+          <small>Featured · Sales · 5 min read</small>
+          <h2>The 20-minute lead follow-up playbook</h2>
+          <p>A template that gets every new lead a reply within a minute, with no one watching the inbox.</p>
+          <a class="more" href="#">Read the article</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- BROWSE -->
+    <section class="sec rv" id="browse">
+      <div class="wrap">
+        <div class="bar rw">
+          <div class="chips" id="cats" role="group" aria-label="Filter by topic"></div>
+          <div class="sf"><label class="sr" for="q">Search articles</label><input id="q" type="search"
+              placeholder="Search articles" autocomplete="off"></div>
+        </div>
+        <div class="grid" id="posts"></div>
+        <div id="empty" class="pn" hidden style="text-align:center">
+          <h3>No articles match your search</h3>
+          <p style="margin:.4rem auto 1rem">Try a different word, or clear the filters to see everything.</p>
+          <button type="button" class="btn o" id="clear">Clear filters</button>
+        </div>
+        <p class="cnt" id="cnt" aria-live="polite" style="max-width:none"></p>
+        <div class="more-w"><button type="button" class="btn o" id="more">Load more articles</button></div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="sec rv" id="subscribe">
+      <div class="wrap">
+        <div class="band rw">
+          <div>
+            <h2>Get automation tips in your inbox</h2>
+            <p>One short email every two weeks with templates, product updates and real customer playbooks. No spam.</p>
+          </div>
+          <div style="flex:1 1 340px;max-width:460px">
+            <form class="nl" data-form data-msg="Thanks! Check your inbox to confirm." data-busy="Subscribing…"
+              style="margin-top:0">
+              <input id="nle" name="email" type="email" data-v="required email" placeholder="you@company.com"
+                aria-label="Email address" autocomplete="email">
+              <button class="btn" type="submit">Subscribe</button>
+            </form>
+            <span class="err" id="nle-e" aria-live="polite"></span>
+            <span class="fmsg" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fg">
+      <div>
+<a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+        <p style="margin-top:.8rem">AI and automation for busy teams. Connect your apps, build workflows and let agents
+          do the rest.</p>
+      </div>
+      <div>
+        <h3>Product</h3><a href="./index.html#platform">Platform</a><a href="./index.html#builder">Workflow
+          builder</a><a href="./index.html#agents">AI agents</a><a href="./index.html#pricing">Pricing</a>
+      </div>
+      <div>
+        <h3>Company</h3><a href="./about.html">About</a><a href="./service.html">Service</a><a
+          href="./blog.html">Blog</a><a href="./contact.html">Contact</a>
+      </div>
+      <div>
+        <h3>Account</h3><a href="./login.html">Log in</a><a href="./signup.html">Sign up</a><a
+          href="./index.html#faq">FAQ</a><a href="./index.html#news">Newsletter</a>
+      </div>
+    </div>
+    <div class="bt"><span>© <span data-y>2026</span> Stackly. All rights reserved.</span><span>Privacy · Terms ·
+        Cookies</span></div>
+  </footer>
+  <a id="top" href="#" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+</body>
+
+</html>

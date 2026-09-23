@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Stackly</title>
+  <meta name="description"
+    content="Stackly builds automation that gets out of your way. Meet the team and read our story.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./pages.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="./pages.js" defer></script>
+</head>
+
+<body data-page="about">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="pg"></div>
+  <header>
+   <a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+    <button id="mb" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i
+        class="fa-solid fa-bars"></i></button>
+    <nav id="nav"><a data-p="home" href="./index.html">Home</a><a data-p="about" href="./about.html">About</a><a
+        data-p="service" href="./service.html">Service</a><a data-p="blog" href="./blog.html">Blog</a><a
+        data-p="contact" href="./contact.html">Contact</a><a class="btn" data-p="login" href="./login.html">Login</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero ph">
+      <div class="tx">
+        <h1>We build automation that gets out of your way</h1>
+        <p class="lead">Stackly started with a simple frustration: smart people spending their days copying data between
+          tabs. We make the busywork run itself, so your team can focus on decisions.</p>
+        <div class="btns"><a class="btn" href="./signup.html">Start free</a><a class="btn o" href="./contact.html">Talk
+            to us</a></div>
+      </div>
+      <div class="art">
+        <img src="./image3/image-1-compressed.webp"
+          alt="The Stackly team working together at a shared desk" width="800" height="800" fetchpriority="high"
+          data-fb="about-hero">
+        <div class="fb p1"><i class="fa-solid fa-users" aria-hidden="true"></i>
+          <div><b>2,400</b><small>teams onboard</small></div>
+        </div>
+        <div class="fb p2"><i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <div><b>90M</b><small>tasks run every month</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="sec rv" id="story">
+      <div class="wrap story">
+        <div class="pic rw"><img src="./image3/image-1-compressed (1).webp"
+            alt="Founders sketching the first Stackly workflow on a whiteboard" width="800" height="600" loading="lazy"
+            data-fb="about-story"></div>
+        <div class="rw">
+          <h2>From a side project to 2,400 teams</h2>
+          <p>We built the first version to fix our own invoicing. Friends asked for it, then their teams did. Five years
+            on, Stackly is the automation layer for teams of every size.</p>
+          <ol class="tl">
+            <li><b>2021</b><span>Two founders automate their own invoicing and share the flow with friends.</span></li>
+            <li><b>2022</b><span>The first 100 teams join and the visual builder launches.</span></li>
+            <li><b>2024</b><span>AI agents arrive, along with SOC 2 Type II.</span></li>
+            <li><b>2025</b><span>The library passes 300 apps and regional hosting opens in the US, EU and India.</span>
+            </li>
+            <li><b>2026</b><span>2,400 teams run 90 million automated tasks every month.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="sec rv" id="values">
+      <div class="wrap">
+        <div class="sh">
+          <h2>What we believe</h2>
+          <p>Four ideas shape every feature we ship and every decision we make.</p>
+        </div>
+        <div class="grid g4">
+          <div class="gc">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
+            <h3>People first</h3>
+            <p>Software should give time back, not ask for more of it.</p>
+          </div>
+          <div class="gc">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-comments"></i></div>
+            <h3>Plain language</h3>
+            <p>If a workflow needs a manual to read, we redesign it.</p>
+          </div>
+          <div class="gc">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Earned trust</h3>
+            <p>Your data stays yours. Security is something we ship every week.</p>
+          </div>
+          <div class="gc">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Ship weekly</h3>
+            <p>Small improvements, released often, guided by what customers tell us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="sec rv" id="numbers">
+      <div class="wrap">
+        <div class="sh c">
+          <h2>Stackly in numbers</h2>
+          <p>Where we are today.</p>
+        </div>
+        <div class="big four rw">
+          <div><strong data-n="2400">2400</strong><small>teams onboard</small></div>
+          <div><strong data-n="300" data-s="+">300+</strong><small>app integrations</small></div>
+          <div><strong data-n="90" data-s="M">90M</strong><small>tasks run each month</small></div>
+          <div><strong data-n="99" data-s="%">99%</strong><small>uptime</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="sec rv" id="team">
+      <div class="wrap">
+        <div class="sh">
+          <h2>Meet the team</h2>
+          <p>A small group of engineers, designers and support people who use Stackly every day. Replace these
+            placeholder names and photos with your own.</p>
+        </div>
+        <div class="grid g4">
+          <article class="tm">
+            <div class="tf"><img src="./persons/image7-compressed.webp"
+                alt="Portrait of Aarav Mehta" width="400" height="400" loading="lazy" data-fb="team1"></div>
+            <div class="nm">
+              <h3>Aarav Mehta</h3><small>Co-founder and CEO</small>
+            </div>
+          </article>
+          <article class="tm">
+            <div class="tf"><img src="./persons/image10-compressed.webp"
+                alt="Portrait of Sofia Lindqvist" width="400" height="400" loading="lazy" data-fb="team2"></div>
+            <div class="nm">
+              <h3>Sofia Lindqvist</h3><small>Co-founder and CTO</small>
+            </div>
+          </article>
+          <article class="tm">
+            <div class="tf"><img src="./persons/image8-compressed.webp"
+                alt="Portrait of Ananya Rao" width="400" height="400" loading="lazy" data-fb="team3"></div>
+            <div class="nm">
+              <h3>Ananya Rao</h3><small>Head of Product</small>
+            </div>
+          </article>
+          <article class="tm">
+            <div class="tf"><img src="./persons/image9-compressed.webp"
+                alt="Portrait of Marcus Hale" width="400" height="400" loading="lazy" data-fb="team4"></div>
+            <div class="nm">
+              <h3>Marcus Hale</h3><small>Head of Customer Success</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="sec rv" id="cta">
+      <div class="wrap">
+        <div class="band rw">
+          <div>
+            <h2>Ready to give your team its afternoons back?</h2>
+            <p>Free forever on the Starter plan. No credit card needed.</p>
+          </div>
+          <div class="btns"><a class="btn" href="./signup.html">Start free</a><a class="btn o"
+              href="./contact.html">Talk to sales</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fg">
+      <div>
+<a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+        <p style="margin-top:.8rem">AI and automation for busy teams. Connect your apps, build workflows and let agents
+          do the rest.</p>
+      </div>
+      <div>
+        <h3>Product</h3><a href="./index.html#platform">Platform</a><a href="./index.html#builder">Workflow
+          builder</a><a href="./index.html#agents">AI agents</a><a href="./index.html#pricing">Pricing</a>
+      </div>
+      <div>
+        <h3>Company</h3><a href="./about.html">About</a><a href="./service.html">Service</a><a
+          href="./blog.html">Blog</a><a href="./contact.html">Contact</a>
+      </div>
+      <div>
+        <h3>Account</h3><a href="./login.html">Log in</a><a href="./signup.html">Sign up</a><a
+          href="./index.html#faq">FAQ</a><a href="./index.html#news">Newsletter</a>
+      </div>
+    </div>
+    <div class="bt"><span>© <span data-y>2026</span> Stackly. All rights reserved.</span><span>Privacy · Terms ·
+        Cookies</span></div>
+  </footer>
+  <a id="top" href="#" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+</body>
+
+</html>

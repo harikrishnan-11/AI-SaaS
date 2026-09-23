@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Stackly</title>
+  <meta name="robots" content="noindex">
+  <!-- If your host serves this page at nested URLs (e.g. /blog/old-post), make the paths below
+     root-relative ("/pages.css", "/index.html") or add <base href="/"> so assets still load. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./pages.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="./pages.js" defer></script>
+</head>
+
+<body data-page="404">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="pg"></div>
+  <header>
+   <a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+    <button id="mb" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i
+        class="fa-solid fa-bars"></i></button>
+    <nav id="nav"><a data-p="home" href="./index.html">Home</a><a data-p="about" href="./about.html">About</a><a
+        data-p="service" href="./service.html">Service</a><a data-p="blog" href="./blog.html">Blog</a><a
+        data-p="contact" href="./contact.html">Contact</a><a class="btn" data-p="login" href="./login.html">Login</a>
+    </nav>
+  </header>
+
+  <main id="main" class="nf hero">
+    <div class="nf-in">
+      <!-- The zero in 404 is the hero image -->
+      <div class="num" aria-hidden="true">
+        <span>4</span>
+        <span class="zero"><img src="https://loremflickr.com/600/600/astronaut,space?lock=701" alt="" width="600"
+            height="600" fetchpriority="high" data-fb="notfound-hero"></span>
+        <span>4</span>
+      </div>
+      <h1>This page took a wrong turn</h1>
+      <p>We could not find <code id="pth">that address</code>. It may have moved, or the link has a typo.</p>
+      <form id="sf" role="search">
+        <label class="sr" for="sq">Search pages</label>
+        <input id="sq" type="search" placeholder="Search pages, for example pricing" autocomplete="off">
+      </form>
+      <ul class="res" id="sr" aria-live="polite"></ul>
+      <div class="btns c"><a class="btn" href="./index.html">Back to home</a><a class="btn o"
+          href="./contact.html">Report a broken link</a></div>
+    </div>
+  </main>
+
+  <footer class="mini"><span>© <span data-y>2026</span> Stackly. All rights reserved.</span></footer>
+</body>
+
+</html>

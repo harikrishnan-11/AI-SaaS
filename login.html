@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | Stackly</title>
+  <meta name="description" content="Log in to your Stackly workspace.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./pages.css">
+ 
+</head>
+
+<body data-page="login">
+
+  <main id="main" class="au hero">
+    <!-- FORM -->
+    <section class="fp">
+      <div class="fbox">
+        <h1>Welcome back</h1>
+        <p class="lead" style="font-size:1rem;margin-top:.6rem">Log in to see your workflows, runs and savings.</p>
+
+        <form id="loginform" data-validate novalidate>
+          <div class="fld">
+            <label for="le">Email</label>
+            <input id="le" name="email" type="email" data-v="required email" autocomplete="email"
+              placeholder="you@company.com">
+            <span class="err" id="le-e" aria-live="polite"></span>
+          </div>
+          <div class="fld">
+            <label for="role">Role</label>
+            <select id="role" name="role" data-v="required">
+              <option value="">Select your role</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+            <span class="err" id="role-e" aria-live="polite"></span>
+          </div>
+          <div class="fld"><label for="lp">Password</label>
+            <div class="pw"><input id="lp" name="password" type="password" data-v="required"
+                autocomplete="current-password" placeholder="Your password"><button type="button" data-pw="lp"
+                aria-pressed="false" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div>
+            <span class="err" id="lp-e" aria-live="polite"></span>
+          </div>
+          <div class="row-b">
+            <label class="ck-row"><input type="checkbox" name="remember" id="rememberme"> Keep me signed in</label>
+            <a class="lnk" href="mailto:hello@stackly.com?subject=Password%20reset">Forgot password?</a>
+          </div>
+          <button class="btn blk" type="submit" style="margin-top:1.4rem">Log in</button>
+        </form>
+
+        <span class="fmsg" aria-live="polite"></span>
+
+        <div class="or">or continue with</div>
+        <div class="soc">
+          <button class="btn o social" type="button"><i class="fa-brands fa-google" aria-hidden="true"></i> Google</button>
+          <button class="btn o social" type="button"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</button>
+        </div>
+        <p class="sw">New to Stackly? <a class="lnk" href="./signup.html">Create a free account</a></p>
+      </div>
+    </section>
+
+    <!-- IMAGE PANEL -->
+    <aside class="ip">
+      <img src="images/image3-compressed.webp"
+        alt="A bright workspace with a laptop showing a workflow dashboard" width="900" height="1200"
+        fetchpriority="high" data-fb="login-hero">
+      <div class="fb"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i>
+        <div><b>72%</b><small>less manual work</small></div>
+      </div>
+      <div class="ov">
+        <figure class="glass">
+          <p>“Our support agent now handles the routine 60% of tickets on its own.”</p>
+          <small>Daniel, Head of Support</small>
+        </figure>
+      </div>
+    </aside>
+  </main>
+ <script>
+  
+  const loginForm = document.getElementById("loginform");
+
+  if (loginForm) {
+
+    loginForm.addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      // Get values
+      const emailValue = document.getElementById("le").value.trim();
+      const roleValue = document.getElementById("role").value;
+      const passwordValue = document.getElementById("lp").value;
+      const remember = document.getElementById("rememberme").checked;
+
+      // Error elements
+      const emailError = document.getElementById("le-e");
+      const roleError = document.getElementById("role-e");
+      const passwordError = document.getElementById("lp-e");
+
+      // Success message
+      const message = loginForm.parentElement.querySelector(".fmsg");
+
+      // Clear old errors
+      emailError.textContent = "";
+      roleError.textContent = "";
+      passwordError.textContent = "";
+      message.textContent = "";
+
+      let valid = true;
+
+      // =========================
+      // EMAIL VALIDATION
+      // =========================
+
+      if (emailValue === "") {
+
+        emailError.textContent = "Email is required";
+        valid = false;
+
+      } else if (
+        !/^[^\s@]+@[^\s@]+\.(com|in|gov|org|net)$/i.test(emailValue)
+      ) {
+
+        emailError.textContent = "Invalid email format";
+        valid = false;
+      }
+
+
+      // =========================
+      // ROLE VALIDATION
+      // =========================
+
+      if (roleValue === "") {
+
+        roleError.textContent = "Role is required";
+        valid = false;
+      }
+
+
+      // =========================
+      // PASSWORD VALIDATION
+      // =========================
+
+      if (passwordValue.trim() === "") {
+
+        passwordError.textContent = "Password is required";
+        valid = false;
+
+      } else if (passwordValue.length < 6) {
+
+        passwordError.textContent =
+          "Password must be at least 6 characters";
+
+        valid = false;
+      }
+
+
+      // =========================
+      // STOP IF INVALID
+      // =========================
+
+      if (!valid) {
+        return;
+      }
+
+
+      // =========================
+      // SAVE LOGIN INFORMATION
+      // =========================
+
+      localStorage.setItem("email", emailValue);
+      localStorage.setItem("role", roleValue);
+
+      if (remember) {
+        localStorage.setItem("remember", "true");
+      } else {
+        localStorage.removeItem("remember");
+      }
+
+
+      // =========================
+      // SUCCESS MESSAGE
+      // =========================
+
+      message.textContent = "Login successful! Redirecting...";
+
+
+      // =========================
+      // REDIRECT
+      // =========================
+
+      setTimeout(function () {
+
+        if (roleValue === "admin") {
+
+          window.location.href = "admin.html";
+
+        } else if (roleValue === "user") {
+
+          window.location.href = "user.html";
+        }
+
+      }, 900);
+
+    });
+  }
+
+  const social = document.querySelectorAll(".social");
+
+  social.forEach((btn)=>{
+    btn.addEventListener("click",()=>{
+      window.location.href = "404.html";
+    })
+  })
+</script>
+</body>
+
+</html>

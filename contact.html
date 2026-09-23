@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Stackly</title>
+  <meta name="description"
+    content="Ask about pricing, a demo or a custom integration. A real person replies within one business day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./pages.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="./pages.js" defer></script>
+</head>
+
+<body data-page="contact">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="pg"></div>
+  <header>
+   <a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+    <button id="mb" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i
+        class="fa-solid fa-bars"></i></button>
+    <nav id="nav"><a data-p="home" href="./index.html">Home</a><a data-p="about" href="./about.html">About</a><a
+        data-p="service" href="./service.html">Service</a><a data-p="blog" href="./blog.html">Blog</a><a
+        data-p="contact" href="./contact.html">Contact</a><a class="btn" data-p="login" href="./login.html">Login</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO: image on the left, quick contact links -->
+    <section class="hero ph flip">
+      <div class="tx">
+        <h1>Tell us what you would like to stop doing by hand</h1>
+        <p class="lead">Ask about pricing, a demo or a custom integration. A real person replies within one business
+          day.</p>
+        <div class="quick">
+          <a href="mailto:hello@stackly.com"><i class="fa-solid fa-envelope"
+              aria-hidden="true"></i>hello@stackly.com</a>
+          <a href="tel:+14155550142"><i class="fa-solid fa-phone" aria-hidden="true"></i>+1 (415) 555-0142</a>
+          <span><i class="fa-solid fa-clock" aria-hidden="true"></i>Mon to Fri, 9am to 6pm</span>
+        </div>
+      </div>
+      <div class="art">
+        <img src="images/image3-compressed.webp"
+          alt="A friendly support specialist wearing a headset" width="800" height="800" fetchpriority="high"
+          data-fb="contact-hero">
+        <div class="fb p1"><i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <div><b>&lt; 1 day</b><small>average reply time</small></div>
+        </div>
+        <div class="fb p2"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+          <div><b>40+</b><small>languages supported</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM + INFO -->
+    <section class="sec rv" id="form">
+      <div class="wrap cg">
+        <div class="pn rw">
+          <div id="ok" class="done" tabindex="-1" hidden>
+            <i class="fa-solid fa-circle-check ck" aria-hidden="true"></i>
+            <h2>Message sent</h2>
+            <p>Thanks! We will reply to <b data-echo="email"></b> within one business day.</p>
+            <div class="btns"><a class="btn" href="./blog.html">Read the blog</a><a class="btn o"
+                href="./index.html">Back to home</a></div>
+          </div>
+          <form data-form data-done="#ok" data-busy="Sending…" id="cf">
+            <h2 style="font-size:1.8rem">Send us a message</h2>
+            <p>Fields marked with an asterisk are required.</p>
+            <div class="r2">
+              <div class="fld"><label for="cn">Full name *</label><input id="cn" name="name" data-v="required name"
+                  autocomplete="name" placeholder="Priya Sharma"><span class="err" id="cn-e" aria-live="polite"></span>
+              </div>
+              <div class="fld"><label for="ce">Work email *</label><input id="ce" name="email" type="email"
+                  data-v="required email" autocomplete="email" placeholder="you@company.com"><span class="err" id="ce-e"
+                  aria-live="polite"></span></div>
+            </div>
+            <div class="r2">
+              <div class="fld"><label for="cc">Company</label><input id="cc" name="company" autocomplete="organization"
+                  placeholder="Northwind"></div>
+              <div class="fld"><label for="ct">Topic *</label>
+                <select id="ct" name="topic" data-v="required">
+                  <option value="">Choose one</option>
+                  <option>Pricing and plans</option>
+                  <option>Book a demo</option>
+                  <option>Custom integration</option>
+                  <option>Support</option>
+                  <option>Something else</option>
+                </select>
+                <span class="err" id="ct-e" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="fld"><label for="cm">How can we help? *</label><textarea id="cm" name="message" maxlength="600"
+                data-v="required min" data-min="10" data-count="cm-c"
+                placeholder="Tell us about the task you want to automate."></textarea><span class="cc" id="cm-c">0 /
+                600</span><span class="err" id="cm-e" aria-live="polite"></span></div>
+            <button class="btn blk" type="submit" style="margin-top:1rem">Send message</button>
+          </form>
+        </div>
+        <div class="info">
+          <div class="card rw">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <h3>Book a demo</h3>
+              <p>See a live workflow built from scratch in 20 minutes.</p>
+            </div>
+          </div>
+          <div class="card rw">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-life-ring"></i></div>
+            <div>
+              <h3>Need support?</h3>
+              <p>Customers on Growth and Scale get priority replies.</p>
+            </div>
+          </div>
+          <div class="card rw">
+            <div class="ic" aria-hidden="true"><i class="fa-solid fa-lock"></i></div>
+            <div>
+              <h3>Security questions</h3>
+              <p>Ask for our SOC 2 report and data processing terms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    <!-- FAQ -->
+    <section class="sec rv" id="faq">
+      <div class="wrap">
+        <div class="sh c">
+          <h2>Before you write</h2>
+          <p>These might save you a day.</p>
+        </div>
+        <div class="fq rw">
+          <details>
+            <summary>How fast will I hear back?</summary>
+            <p>Within one business day. Customers on Growth and Scale get priority replies.</p>
+          </details>
+          <details>
+            <summary>Can I try Stackly before talking to sales?</summary>
+            <p>Yes. The Starter plan is free forever and needs no credit card. <a class="lnk"
+                href="./signup.html">Create an account</a>.</p>
+          </details>
+          <details>
+            <summary>Do you offer a demo?</summary>
+            <p>Choose "Book a demo" in the form above and we will send a few times that work.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fg">
+      <div><a class="logo" href="./index.html" style="display:flex;padding:0"><img src="./logo/Untitled design-compressed (1).webp" alt=""></a>
+        <p style="margin-top:.8rem">AI and automation for busy teams. Connect your apps, build workflows and let agents
+          do the rest.</p>
+      </div>
+      <div>
+        <h3>Product</h3><a href="./index.html#platform">Platform</a><a href="./index.html#builder">Workflow
+          builder</a><a href="./index.html#agents">AI agents</a><a href="./index.html#pricing">Pricing</a>
+      </div>
+      <div>
+        <h3>Company</h3><a href="./about.html">About</a><a href="./service.html">Service</a><a
+          href="./blog.html">Blog</a><a href="./contact.html">Contact</a>
+      </div>
+      <div>
+        <h3>Account</h3><a href="./login.html">Log in</a><a href="./signup.html">Sign up</a><a
+          href="./index.html#faq">FAQ</a><a href="./index.html#news">Newsletter</a>
+      </div>
+    </div>
+    <div class="bt"><span>© <span data-y>2026</span> Stackly. All rights reserved.</span><span>Privacy · Terms ·
+        Cookies</span></div>
+  </footer>
+  <a id="top" href="#" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+</body>
+
+</html>

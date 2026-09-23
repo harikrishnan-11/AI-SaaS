@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up | Stackly</title>
+  <meta name="description" content="Create a free Stackly account. No credit card needed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./pages.css">
+
+</head>
+
+<body data-page="signup">
+
+
+  <main id="main" class="au rev hero">
+    <!-- IMAGE PANEL (left on desktop, top on mobile) -->
+    <aside class="ip">
+      <img src="images/image3-compressed.webp" alt="A small team celebrating around a laptop"
+        width="900" height="1200" fetchpriority="high" data-fb="signup-hero">
+      <div class="fb"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i>
+        <div><b>Minutes</b><small>to your first automation</small></div>
+      </div>
+      <div class="ov">
+        <div class="glass">
+          <h2>Free forever on Starter</h2>
+          <ul class="l">
+            <li>1,000 runs a month</li>
+            <li>5 workflows and 20 integrations</li>
+            <li>No credit card needed</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FORM -->
+    <section class="fp">
+      <div class="fbox">
+        <div id="ok" class="done" tabindex="-1" hidden>
+          <i class="fa-solid fa-circle-check ck" aria-hidden="true"></i>
+          <h1 style="font-size:2rem">Check your inbox</h1>
+          <p>We sent a confirmation link to <b data-echo="email"></b>. Open it to finish setting up your workspace.</p>
+          <div class="btns"><a class="btn" href="./login.html">Go to login</a><a class="btn o" href="./index.html">Back
+              to home</a></div>
+        </div>
+
+        <form id="sf">
+          <h1>Create your free account</h1>
+          <p class="lead" style="font-size:1rem;margin-top:.6rem">Set up your first automation in minutes.</p>
+          <div class="fld"><label for="sn">Full name</label><input id="sn" name="name" data-v="required name"
+              autocomplete="name" placeholder="Priya Sharma"><span class="err" id="sn-e" aria-live="polite"></span>
+          </div>
+          <div class="fld">
+            <label for="role">Role</label>
+            <select id="role" name="role" data-v="required">
+              <option value="">Select your role</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+            <span class="err" id="role-e" aria-live="polite"></span>
+          </div>
+          <div class="fld"><label for="se">Work email</label><input id="se" name="email" type="email"
+              data-v="required email" autocomplete="email" placeholder="you@company.com"><span class="err" id="se-e"
+              aria-live="polite"></span></div>
+          <div class="fld"><label for="sp">Password</label>
+            <div class="pw"><input id="sp" name="password" type="password" data-v="required pass" data-meter="pm"
+                autocomplete="new-password" placeholder="At least 8 characters"><button type="button" data-pw="sp"
+                aria-pressed="false" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div>
+            <div class="meter" id="pm" aria-hidden="true"><i></i></div><span class="mt" id="pm-t">Use 8 or more
+              characters</span>
+            <span class="err" id="sp-e" aria-live="polite"></span>
+          </div>
+         
+          <label class="ck-row"><input id="st" type="checkbox" name="terms" required
+              data-msg="Please accept the terms to continue."><span>I agree to the <a href="./404.html">Terms</a> and <a
+                href="./404.html">Privacy Policy</a>.</span></label>
+          <span class="err" id="st-e" aria-live="polite"></span>
+          <button class="btn blk" type="submit" style="margin-top:1rem">Create account</button>
+          <p class="sw">Already have an account? <a class="lnk" href="./login.html">Log in</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script>
+  const form = document.getElementById("sf");
+
+  if (form) {
+
+    form.addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      // =========================
+      // GET VALUES
+      // =========================
+
+      const nameInput = document.getElementById("sn").value.trim();
+      const roleInput = document.getElementById("role").value;
+      const emailInput = document.getElementById("se").value.trim();
+      const passwordInput = document.getElementById("sp").value;
+      const termsInput = document.getElementById("st").checked;
+
+
+      // =========================
+      // ERROR ELEMENTS
+      // =========================
+
+      const nameError = document.getElementById("sn-e");
+      const roleError = document.getElementById("role-e");
+      const emailError = document.getElementById("se-e");
+      const passwordError = document.getElementById("sp-e");
+      const termsError = document.getElementById("st-e");
+
+
+      // =========================
+      // CLEAR OLD ERRORS
+      // =========================
+
+      nameError.textContent = "";
+      roleError.textContent = "";
+      emailError.textContent = "";
+      passwordError.textContent = "";
+      termsError.textContent = "";
+
+
+      let valid = true;
+
+
+      // =========================
+      // NAME VALIDATION
+      // =========================
+
+      if (nameInput === "") {
+
+        nameError.textContent = "Full name is required";
+        valid = false;
+
+      } else if (nameInput.length < 3) {
+
+        nameError.textContent = "Name must be at least 3 characters";
+        valid = false;
+
+      } else if (!/^[a-zA-Z ]+$/.test(nameInput)) {
+
+        nameError.textContent = "Name can contain only letters";
+        valid = false;
+      }
+
+
+      // =========================
+      // ROLE VALIDATION
+      // =========================
+
+      if (roleInput === "") {
+
+        roleError.textContent = "Role is required";
+        valid = false;
+      }
+
+
+      // =========================
+      // EMAIL VALIDATION
+      // =========================
+
+      if (emailInput === "") {
+
+        emailError.textContent = "Work email is required";
+        valid = false;
+
+      } else if (
+        !/^[^\s@]+@[^\s@]+\.(com|in|gov|org|net)$/i.test(emailInput)
+      ) {
+
+        emailError.textContent = "Invalid email format";
+        valid = false;
+      }
+
+
+      // =========================
+      // PASSWORD VALIDATION
+      // =========================
+
+      if (passwordInput.trim() === "") {
+
+        passwordError.textContent = "Password is required";
+        valid = false;
+
+      } else if (passwordInput.length < 8) {
+
+        passwordError.textContent =
+          "Password must be at least 8 characters";
+
+        valid = false;
+
+      } else if (!/[A-Z]/.test(passwordInput)) {
+
+        passwordError.textContent =
+          "Password must contain at least one uppercase letter";
+
+        valid = false;
+
+      } else if (!/[a-z]/.test(passwordInput)) {
+
+        passwordError.textContent =
+          "Password must contain at least one lowercase letter";
+
+        valid = false;
+
+      } else if (!/[0-9]/.test(passwordInput)) {
+
+        passwordError.textContent =
+          "Password must contain at least one number";
+
+        valid = false;
+      }
+
+
+      // =========================
+      // TERMS VALIDATION
+      // =========================
+
+      if (!termsInput) {
+
+        termsError.textContent =
+          "Please accept the terms to continue.";
+
+        valid = false;
+      }
+
+
+      // =========================
+      // STOP IF INVALID
+      // =========================
+
+      if (!valid) {
+        return;
+      }
+
+
+      // =========================
+      // SAVE USER INFORMATION
+      // =========================
+
+      localStorage.setItem("name", nameInput);
+      localStorage.setItem("email", emailInput);
+      localStorage.setItem("role", roleInput);
+      localStorage.setItem("password", passwordInput);
+
+
+      // =========================
+      // SHOW SUCCESS SCREEN
+      // =========================
+
+      const successBox = document.getElementById("ok");
+
+      successBox.querySelector("[data-echo='email']").textContent =
+        emailInput;
+
+      form.hidden = true;
+      successBox.hidden = false;
+
+    });
+
+  }
+
+  const social = document.querySelectorAll(".social");
+
+  social.forEach((btn)=>{
+    btn.addEventListener("click",()=>{
+      window.location.href = "404.html";
+    })
+  })
+</script>
+</body>
+
+</html>
