@@ -152,7 +152,7 @@ p,li,summary,h1,h2,h3,a{overflow-wrap:anywhere}
 .js .rv.in :is(.sh,.rw,.grid>*){opacity:1;animation:up .8s var(--d,0s) backwards}
 
 /* ---------- service cards ---------- */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:1.4rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .gc{
   background:var(--sf);border:1px solid var(--ln);border-radius:22px;padding:1.6rem;
   display:flex;flex-direction:column;position:relative;
@@ -254,10 +254,12 @@ footer{padding:4rem var(--gutter) 2rem;background:#0a0817;border-top:1px solid v
   .orbit i{width:2.5rem;height:2.5rem;margin:-1.25rem;font-size:1rem}
 
   .band{flex-direction:column;align-items:flex-start;gap:1.4rem}
+  .grid{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ---------- small phones ---------- */
 @media(max-width:560px){
+  .grid{grid-template-columns:1fr}
   .btns{flex-direction:column;align-items:stretch}
   .btns .btn{width:100%}
   .band .btns{width:100%}
@@ -401,6 +403,7 @@ footer{padding:4rem var(--gutter) 2rem;background:#0a0817;border-top:1px solid v
               <li>Hosting in the US, EU and India</li>
             </ul><a class="more" href="./contact.html">Ask about this</a>
           </div>
+          
         </div>
       </div>
     </section>
