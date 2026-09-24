@@ -119,7 +119,7 @@ if (grid) {
   chipBox.innerHTML = cats.map(c => `<button type="button" class="chip" aria-pressed="${c === 'All'}" data-c="${c}">${c}</button>`).join('');
 
   const match = () => posts.filter(p => (cat === 'All' || p.c === cat) && `${p.t} ${p.d} ${p.c}`.toLowerCase().includes(q));
-  const card = (p, i) => `<article class="gc bc" style="--d:${(i % 3) * .08}s"><div class="bi"><img src="${p.img}" alt="" width="600" height="400" loading="lazy"></div><div class="bb"><small>${p.c} · ${p.m} min read</small><h3>${p.t}</h3><p>${p.d}</p><a href="#">Read more</a></div></article>`;
+  const card = (p, i) => `<article class="gc bc" style="--d:${(i % 3) * .08}s"><div class="bi"><img src="${p.img}" alt="" width="600" height="400" loading="lazy"></div><div class="bb"><small>${p.c} · ${p.m} min read</small><h3>${p.t}</h3><p>${p.d}</p><a href="./404.html">Read more</a></div></article>`;
 
   function draw(append) {
     const r = match();
